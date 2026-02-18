@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+html{
+    font-size:100%;
+}
+
+body{
+    color:#707070;
+    font-family:sans-serif;
+}
+
+img{
+    max-width:100%;
+    vertical-align:bottom; /*kore nani*/
+}
+
+li{
+    list-style:none;
+}
+
+a{
+    color:#79a1ffb4;
+    text-decoration:none; /*kasen nakunaru*/
+                          /*k4sen kato omotta*/
+}
+
+a:hover{
+    opacity: 0.7;  /*ka-soru awasetara irokawaru*/
+}
+
+@media screen and(max-width:767px){
+    
+}
+
+header{
+    display:flex;
+    align-items:center;
+    padding:10px 10px;
+}
+
+.header-left,.maintitle,nav{
+    flex:1;
+}
+
+.navi {
+    display:flex;
+    justify-content:center;
+    font-size:20px;
+
+}
+
+.navi li{
+    margin:5px;
+}
+
+.maintitle {
+    text-align: center;
+}
+
+.wrapper{
+    max-width:1000px;
+    padding:0 20 px;
+    margin:0 auto;
+}
+
+.memory-list{
+    display:flex;
+    flex-wrap:wrap;
+    padding-left:0; /*ulやliで並べた場合ブラウザ標準のpadding(内側の余白)が発生するのでこれを書いて余白を消す*/
+    justify-content:center;
+}
+
+.memory-list li{
+    margin:5px 5px 5px 5px;
+}
