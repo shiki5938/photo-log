@@ -1,0 +1,494 @@
+
+@charset "utf-8";
+
+html{
+    font-size:100%;
+}
+
+body{
+    color:#707070;
+    font-family:sans-serif;
+}
+
+img{
+    max-width:100%;
+    vertical-align:bottom; /*kore nani*/
+}
+
+li{
+    list-style:none;
+}
+
+a{
+    color:#000000;/*#79a1ffb4;*/
+    text-decoration:none; /*kasen nakunaru*/
+                          /*k4sen kato omotta*/
+}
+
+a:hover{
+    opacity: 0.7;  /*ka-soru awasetara irokawaru*/
+}
+
+@media (max-width:600px){
+  .responsive-image{
+    background-image:url('small-image.jpg');
+  }
+}
+
+@media (min-width:601px)and(max-width:900px){
+  .responsive-image{
+    background-image:url('medium-image.jpg');
+  }
+}
+
+@media (min-width:901px){
+  .responsive-image{
+    background-image:url('large-image.jpg');
+  }
+}
+
+header{
+    display:flex;
+    align-items:center;
+    padding:10px 10px;
+}
+
+.header-left,.maintitle,nav{
+    flex:1;
+}
+
+.navi {
+    display:flex;
+    justify-content:center;
+    font-size:19px;
+
+}
+
+.navi li{
+    margin: 10px;
+}
+
+.maintitle {
+    text-align: center;
+}
+
+.wrapper{
+    max-width:1000px;
+    padding:0 20px;
+    margin:0 auto;
+}
+
+.memory-list{
+    display:flex;
+    flex-wrap:wrap;
+    padding-left:0; /*ulやliで並べた場合ブラウザ標準のpadding(内側の余白)が発生するのでこれを書いて余白を消す*/
+    justify-content:center;
+}
+
+.memory-list li{
+    margin:5px 5px 5px 5px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:-35px;
+}
+
+.detail{
+    text-align:center;
+}
+
+h1{
+    font-size:35px;
+}
+
+h2{
+    font-size:25px;
+}
+
+.rayout{
+  display:flex;
+  align-items:stretch;
+}
+
+.main-profile{
+  margin-right:10px;
+  margin-left:10px;
+  margin-bottom:30px;
+}
+
+.main-profile,.sub-profile{
+  flex:1;
+}
+
+.sub-profile{
+  display:flex;
+  align-items:stretch;
+  margin-bottom:30px;
+}
+
+.camera-detail,.favorite-detail{
+  flex:1;
+}
+
+.camera-detail{
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.favorite-detail{
+  flex:1;
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.design{
+    height:100%;
+    box-sizing:border-box;
+    margin:0;
+    padding:2em;
+    background:none;
+    border:1px solid #333333b4;
+    position:relative;
+    max-width:100%;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.design::after{
+    background-color:#f9f9f8;
+    border:none;
+    content:'';
+    position:absolute;
+    top:7px;
+    left:7px;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    border-radius:20px;
+}
+
+.design p,h3{
+    text-align:center;
+}
+
+.design h3{
+  margin-top:5px;
+}
+
+
+.Log-background{
+    background-color: #c9d9ffb4;
+    border-radius: 20px;
+}
+
+
+/* 1. カードを包む「大きな箱」の設定 */
+.card-container {
+  display: flex;           /* 横に並べる */
+  flex-wrap: wrap;         /* 端まで行ったら自動で折り返す */
+  gap: 30px;               /* カード同士の隙間（上下左右） */
+  justify-content: center;   /* 全体を真ん中に寄せる */
+  padding: 50px 20px; /* 背景に薄いグレーを敷く */
+}
+
+/* 2. カード1枚ずつの設定 */
+.card {
+  width: auto;           /* カードの横幅を固定 */
+  height:auto;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08); /* 柔らかい影 */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  transition: transform 0.3s ease; /* マウスを乗せた時の動き用 */
+  position:relative;
+  overflow:visible;
+  margin-top:40px;
+  position: relative !important;
+  overflow: visible !important; /* ★これが無いとピンが消えます */
+  margin-top: 40px !important;  /* ピンを表示する隙間を空ける */
+  }
+
+/* 1. カード自体の設定：はみ出しを許可する（必須） */
+.card {
+  position: relative !important;
+  overflow: visible !important; 
+}
+
+/* 2. 絵文字「📍」をカード内の真ん中上部に配置 */
+.card::before {
+  content: "📍" !important;      /* 指定の絵文字を使用 */
+  position: absolute !important;
+  
+  /* --- 位置の調整 --- */
+  top: -9px !important;           /* ★ここをプラスにするとカードの内側に刺さります */
+  left: 50% !important;          /* 横方向の真ん中 */
+  transform: translateX(-50%) !important; /* 真ん中ピタ寄せ */
+  
+  /* --- 見た目の調整 --- */
+  font-size: 35px !important;    /* 絵文字のサイズ */
+  line-height: 1 !important;
+  z-index: 100 !important;
+  display: block !important;
+  clip-path:inset(0 0 20% 0);
+}
+
+/* もし前に作った「針」の影が残っていたら消す */
+.card::after {
+  content: none !important;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* マウスを乗せると少し浮く */
+}
+
+/* 3. 画像エリア */
+.card-image-wrapper {
+  position: relative;
+  padding: 12px;
+  padding-top:30px;
+  background-color: #fff;
+  border-radius:15px 15px 0 0;
+}
+.card-image{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+}
+
+.category-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 15px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #555;
+  border-radius: 15px 0 15px 0; /* 左上と右下だけ丸く */
+  z-index: 1;
+}
+
+/* 4. テキスト・ボタンエリア */
+.card-content {
+  height:auto;
+  padding: 0 20px 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.product-title {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+}
+
+.day-blue {
+  background: #447bc3; /* デフォルトの赤茶色 */
+  color: white;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.day-green {
+  background: #44c390; /* デフォルトの赤茶色 */
+  color: white;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight:bold;
+}
+
+.day-pink {
+  background:#c34492; /* デフォルトの赤茶色 */
+  color: white;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight:bold;
+}
+
+.day-yellow {
+  background:#c3b844; /* デフォルトの赤茶色 */
+  color: white;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight:bold;
+}
+
+.day-brown {
+  background:#c38444; /* デフォルトの赤茶色 */
+  color: white;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight:bold;
+}
+
+.discription {
+  font-size: medium;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align:center;
+}
+
+/* 5. タグ */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom:20px;
+}
+
+.tag-blue {
+  background: #f0f4fd; /* 薄い青色 */
+  color: #447bc3;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.tag-green {
+  background: #f0fdfb; /* 薄い青色 */
+  color:#44c390;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.tag-pink {
+  background: #fdf0fb; /* 薄い青色 */
+  color:#c34492;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+
+.tag-yellow{
+  background: #fdfdf0; /* 薄い青色 */
+  color:#c3b844;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+
+.tag-brown {
+  background: #fdf5f0; /* 薄い青色 */
+  color:#c38444;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* 6. ボタン */
+.view-more-blue {
+  width: 100%;
+  background: #447bc3;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-more-green {
+  width: 100%;
+  background: #44c390;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-more-pink {
+  width: 100%;
+  background: #c34492;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-more-yellow {
+  width: 100%;
+  background: #c3b844;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-more-brown {
+  width: 100%;
+  background: #c38444;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-more:hover {
+  filter: brightness(1.1); /* 少し明るくする */
+}
+
+#fotter{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
