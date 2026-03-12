@@ -53,9 +53,12 @@ a:hover{
   .main-profile,.camera-detail,.favorite-detail{
     width:100% !important;
   }
+  .design{
+    height:auto !important;
+  }
 }
 
-@media (min-width:601px)and(max-width:900px){
+@media (min-width:601px) and (max-width:900px){
   .responsive-image{
     background-image:url('medium-image.jpg');
   }
@@ -64,14 +67,19 @@ a:hover{
   }
   .main-profile{
     width:100% !important;
+    margin-bottom:20px;
   }
   .sub-profile{
     display:flex !important;
-    width:100% !important;
     flex-direction:row !important;
-  }
+    width:100% !important;
+    gap:20px;
+  }  
   .camera-detail,.favorite-detail{
     flex:1 !important;
+  }
+  .design{
+    height:100% !important;
   }
 }
 
@@ -94,16 +102,31 @@ a:hover{
     background-image:url('large-image.jpg');
   }
   .rayout{
+    display:flex !important;
     flex-direction:row  !important;
+    align-items:stretch !important;
   }
   .main-profile{
     flex:2 !important;
+    display:flex !important;
+    margin:0 !important;
   }
   .sub-profile{
     flex:2 !important;
+    display:flex !important;
+    align-items:stretch !important;
+    flex-direction:row !important;
+    margin:0 !important;
+    gap:20px !important;
   }
-    .camera-detail,.favorite-detail{
-      flex:1 !important;
+  .camera-detail,.favorite-detail{
+    flex:1 !important;
+    display:flex !important;
+    margin:0 !important;
+  }
+  .design{
+    height:100% !important;
+    width:100% !important;
   }
 }
 
@@ -173,10 +196,10 @@ h2{
 
 .rayout{
   display:flex;
-  gap:20px;
+  gap:20px !important;
   max-width:1200px;
   margin:0 auto;
-  padding:20px;
+  padding:20px !important;
 }
   
 .main-profile{
@@ -185,13 +208,18 @@ h2{
   margin-bottom:30px;
 }
 
+.main-profile,.camera-detail,.favorite-detail{
+  margin:0 !important;
+}
+
 .main-profile,.sub-profile{
   flex:1;
 }
 
 .sub-profile{
-  display:flex;
-  gap:20px;
+  display:flex !important;
+  align-items:stretch !important;
+  gap:20px !important;
   margin-bottom:30px;
 }
 
