@@ -66,6 +66,7 @@ a:hover{
     width:100% !important;
   }
   .sub-profile{
+    display:flex !important;
     width:100% !important;
     flex-direction:row !important;
   }
