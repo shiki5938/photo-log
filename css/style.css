@@ -32,9 +32,26 @@ a:hover{
   .responsive-image{
     background-image:url('small-image.jpg');
   }
+  header{
+    display:flex;
+    justify-content:center;
+    padding:10px 20px;
+  }
+  .maintitle{
+    font-size:24px;
+    white-space:nowrap;
+  }
+  .navi{
+    font-size:16px;
+  }
+  .rayout{
+    flex-direction:column;
+  }
   .sub-profile{
     flex-direction:column;
-
+  }
+  .main-profile,.camera-detail,.favorite-detail{
+    width:100%;
   }
 }
 
@@ -45,24 +62,37 @@ a:hover{
   .rayout{
     flex-direction:column;
   }
+  .main-profile{
+    width:100%;
+  }
   .sub-profile{
+    width:100%;
     flex-direction:row;
   }
-  .main-profile,.sub-profile{
-    width:100px;
+  .camera-detail,.favorite-detail{
+    flex:1;
   }
 }
 
 @media (min-width:901px){
   header{
-    flex-direction:row;
-    justify-content:space-between;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    padding:20px;
   }
   .maintitle{
-    width:auto;
+    margin:0;
+  }
+  nav{
+    position:absolute;
+    right:20px;
   }
   .responsive-image{
     background-image:url('large-image.jpg');
+  }
+  .rayout{flex-direction:row;
   }
   .main-profile{
     flex:2;
@@ -159,7 +189,6 @@ h2{
 
 .sub-profile{
   display:flex;
-  align-items:stretch;
   gap:20px;
   margin-bottom:30px;
 }
